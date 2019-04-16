@@ -1,0 +1,9 @@
+txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+command = new SqlCommand(txtSQL);
+command.Parameters.AddWithValue("@0",txtNam);
+command.Parameters.AddWithValue("@1",txtAdd);
+command.Parameters.AddWithValue("@2",txtCit);
+command.ExecuteNonQuery();
